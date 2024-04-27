@@ -4,6 +4,7 @@
 from django.shortcuts import render
 import requests
 
+
 def index(request):
 
   r = requests.get('https://uselessfacts.jsph.pl/random.json?language=en')
@@ -16,7 +17,7 @@ def index(request):
   r3 = requests.get('https://dog.ceo/api/breeds/image/random')
   res3 = r3.json()
   dog = res3['message']
-
+  
   if request.method == 'POST':
     photo = request.POST.get('photo')
   else:
